@@ -18,10 +18,47 @@ Explanation: Only keep the first occurrence
 
 Solution 1 : Using ArrayList
 
-Time Complexity :
+Time Complexity : O(|S|)
+
+
+String removeDups(String S) 
+{
+    ArrayList<Character> ch=new ArrayList<Character>();
+    int i;
+    String str="";
+    for(i=0;i<S.length();i++)
+    {
+        if(!ch.contains(S.charAt(i)))
+        {
+            ch.add(S.charAt(i));
+            str+=S.charAt(i);
+        }
+    }
+    return str;
+}
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Solution 2 : Using HashSet
 
-Time Complexity :
+Time Complexity : O(|S|)
+
+
+String removeDups(String S) 
+{
+    HashSet<Character> ch=new HashSet<Character>();
+    int i;
+    String str="";
+    for(i=0;i<S.length();i++)
+    {
+        if(!ch.contains(S.charAt(i)))
+        {
+            ch.add(S.charAt(i));
+            str+=S.charAt(i);
+        }
+    }
+    return str;
+}
+
+
+
