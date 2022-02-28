@@ -60,5 +60,25 @@ String removeDups(String S)
     return str;
 }
 
+--------------------------------------------------------------------------------------------------------------------------------
 
+G Solution
 
+Time Complexity : O(|S|)
+
+# HashSet Method
+    
+String removeDups(String S) {
+    HashSet<Character> hs = new HashSet<Character>();
+    String res = "";
+    for(int i=0;i<S.length();i++)
+    {
+        char c = S.charAt(i);
+        if(!hs.contains(c))
+        {
+            hs.add(c);
+            res = res + c;
+        }
+    }
+    return res;
+}
