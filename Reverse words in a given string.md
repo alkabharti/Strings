@@ -37,3 +37,39 @@ String reverseWords(String S)
     return ans;
 }
 ```
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+<h3> G Solution : </h3>
+
+Time Complexity : O(|S|)
+
+```java
+String reverseWords(String S)
+{
+    // code here
+    int n = S.length();
+    String r = "";
+    String s = "";
+    for(int i =0; i < n ; i++)
+    {
+        char c = S.charAt(i);
+        if(c=='.')
+        {
+            r = "."+s+r;
+            s = "";
+        }
+        else if(i==n-1)
+        {
+            s = s + c;
+            r = s + r;
+        }
+        else
+        {
+            s = s + c;
+
+        }
+    }
+    return r;
+}
+```
