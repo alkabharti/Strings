@@ -25,6 +25,8 @@ Time Complexity : O(|S|)
 String reverseWords(String S)
 {
     String[] str=S.split("\\.");
+    if(str.length==0)
+        return S;
     int i;
     String ans="";
     int n=str.length;
