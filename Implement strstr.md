@@ -43,7 +43,7 @@ Time Complexity :
 ```java
 int strstr(String s, String x)
 {
-    if(x.length()==0)
+    if(x.length()==0 || s.length()==0)
         return -1;
     if(s.length() < x.length())
         return -1;
