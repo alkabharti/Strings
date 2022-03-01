@@ -41,4 +41,42 @@ public static boolean isRotated(String str1, String str2)
     return false;
 }
 ```
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+<h3> G Solution : </h3>
+
+Time Complexity : O(N)
+
+```java
+public static boolean isRotated(String str1, String str2)
+{
+    // Your code here
+    int l1 = str1.length();
+    int l2 = str2.length();
+
+    if(l1!=l2)
+        return false;
+
+    return  isAntiClockRotated(str1, str2, l1, l2) || isClockRotated(str1, str2, l1, l2);
+
+}
+
+public static boolean isAntiClockRotated(String str1, String str2, int l1, int l2)
+{
+    String s = str1.substring(2,l1) + str1.substring(0,2);
+    if(s.equals(str2))
+        return true;
+    else
+        return false;
+}
+
+public static boolean isClockRotated(String str1, String str2, int l1, int l2)
+{
+    String s = str1.substring(l1-2,l1) + str1.substring(0,l1-2);
+    if(s.equals(str2))
+        return true;
+    else
+        return false;
+}
+```
 

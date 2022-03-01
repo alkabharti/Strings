@@ -70,4 +70,45 @@ public int value(char r)
     return -1;
 }
 ```
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+<h3>G Solution :</h3>
+
+Time Complexity : O(N)
+
+```java
+public int romanToDecimal(String str) {
+    HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
+    hmap.put('I',1);
+    hmap.put('V',5);
+    hmap.put('X',10);
+    hmap.put('L',50);
+    hmap.put('C',100);
+    hmap.put('D',500);
+    hmap.put('M',1000);
+
+    int x = hmap.get(str.charAt(0));
+    int l = str.length();
+    if(l==1)
+    {
+        return x;
+    }
+    int i=1;
+    while(i<l)
+    {
+        int vi = hmap.get(str.charAt(i));
+        int v_prev = hmap.get(str.charAt(i-1));
+        if(v_prev<vi)
+        {
+            x = x + vi - 2*v_prev;
+        }
+        else
+        {
+            x = x + vi;
+        }
+        i++;
+    }
+    return x;
+}
+```
 
