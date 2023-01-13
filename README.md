@@ -1,4 +1,6 @@
-# Strings
+# Strings 
+
+### a) Find ASCII value of a character.
 
 ```java
 a) char ch='P'
@@ -6,6 +8,8 @@ a) char ch='P'
       System.out.println(ascii);
 
 ```
+
+### b) Convert case of a character in a string.
 
 ```java
 
